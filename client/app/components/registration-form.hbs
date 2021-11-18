@@ -1,0 +1,8 @@
+<h1>Register: </h1>
+<form onsubmit={{action 'submit'}} >
+    <h1>{{@handleSubmit}}</h1>
+    <Input placeholder="username" @value={{this.username}}></Input>
+    <Input placeholder="email" @type="email" @value={{this.email}}></Input>
+    <Input placeholder="password" @type="password" @value={{this.password}}></Input>
+    <button type="submit">Submit</button>
+</form>

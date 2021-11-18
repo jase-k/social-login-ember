@@ -1,0 +1,7 @@
+<h1>Login: </h1>
+<form onsubmit={{action 'submit'}} >
+    <h1>{{@handleSubmit}}</h1>
+    <Input placeholder="username" @value={{this.username}}></Input>
+    <Input placeholder="password" @type="password" @value={{this.password}}></Input>
+    <button type="submit">Submit</button>
+</form>
