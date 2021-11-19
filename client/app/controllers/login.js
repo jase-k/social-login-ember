@@ -6,7 +6,7 @@ export default class LoginController extends Controller {
   @service session;
 
   @action
-  registerUser(un, em, pw) {
+  async registerUser(un, em, pw) {
     console.log('form submitted');
     let user = this.store.createRecord('user', {
       username: un,
@@ -17,7 +17,11 @@ export default class LoginController extends Controller {
       .save()
       .then((results) => {
         console.log(results);
-        this.transitionToRoute('dashboard');
+        this.session.authenticate(
+            'authenticator:server',
+            un,
+            pw 
+        )
       })
       .catch((err) => console.log(err));
     console.log(user);

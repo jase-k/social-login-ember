@@ -10,7 +10,8 @@ export default class IndexRoute extends Route {
   }
 
   async model() {
-    console.log(this.store.findRecord('user', 6));
-    return this.store.findRecord('user', 6);
+    console.log("Store:", this.store);
+    console.log("Session:", this.session);
+    return this.store.findRecord('user', this.session.data.authenticated.data.id);
   }
 }
